@@ -1,6 +1,6 @@
 {
   "name": "get-object-path",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Return a value from given object path",
   "main": "index.js",
   "scripts": {
