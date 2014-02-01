@@ -10,7 +10,7 @@ $ npm install get-object-path
 
 ## Usage
 
-```
+```js
 get = require('get-object-path')
 
 context = {
