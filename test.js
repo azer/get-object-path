@@ -26,6 +26,11 @@ it('parses object paths and returns the value', function(){
   expect(get(context, 'such.perform.so.scale')).to.equal('leveldb');
 });
 
+it('returns undefined for non existing paths', function(){
+  expect(get(context, 'foo.bar.qux')).to.not.exist;
+  expect(get(context, '@foo')).to.not.exist;
+});
+
 it('reads list contents, as well', function(){
   expect(get(context, 'qux.eggs[0]')).to.equal('white egg');
   expect(get(context, 'qux.eggs[1]')).to.equal('brown egg');

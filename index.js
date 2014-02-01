@@ -13,6 +13,7 @@ function get (context, path) {
   while (++i < len) {
     if (i == 0) result = context;
     if (!crumbs[i]) continue;
+    if (result == undefined) break;
     result = result[crumbs[i]];
   }
 
