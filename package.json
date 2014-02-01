@@ -1,6 +1,6 @@
 {
   "name": "get-object-path",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Return a value from given object path",
   "main": "index.js",
   "scripts": {
@@ -14,9 +14,9 @@
     "path"
   ],
   "repository": {
-    "url": "git@github.com:azer\/get-object-path.git",
+    "url": "git@github.com:azer/get-object-path.git",
     "type": "git"
   },
-  "author": "Azer Ko\u00e7ulu <azer@kodfabrik.com>",
+  "author": "Azer Koçulu <azer@kodfabrik.com>",
   "license": "BSD"
 }
