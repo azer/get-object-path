@@ -1,7 +1,7 @@
 module.exports = get;
 
 function get (context, path) {
-  if (path.indexOf('.') == -1) {
+  if (path.indexOf('.') == -1 && path.indexOf('[') == -1) {
     return context[path];
   }
 

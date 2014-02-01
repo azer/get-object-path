@@ -14,7 +14,8 @@ var context = {
       'orange',
       'carrot'
     ]
-  }
+  },
+  'foods I love': ['hamsi', 'lahmacun']
 }
 
 it('returns the value of given key', function(){
@@ -34,6 +35,8 @@ it('returns undefined for non existing paths', function(){
 it('reads list contents, as well', function(){
   expect(get(context, 'qux.eggs[0]')).to.equal('white egg');
   expect(get(context, 'qux.eggs[1]')).to.equal('brown egg');
+  expect(get(context, 'foods I love[0]')).to.equal('hamsi');
+  expect(get(context, 'foods I love[1]')).to.equal('lahmacun');
 });
 
 it("doesn't matter if keys with special characters are given", function(){
