@@ -1,0 +1,22 @@
+{
+  "name": "get-object-path",
+  "version": "0.0.0",
+  "description": "Return a value from given object path",
+  "main": "index.js",
+  "scripts": {
+    "test": "prova"
+  },
+  "devDependencies": {
+    "prova": "*"
+  },
+  "keywords": [
+    "object",
+    "path"
+  ],
+  "repository": {
+    "url": "git@github.com:azer\/get-object-path.git",
+    "type": "git"
+  },
+  "author": "Azer Ko\u00e7ulu <azer@kodfabrik.com>",
+  "license": "BSD"
+}
