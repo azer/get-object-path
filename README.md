@@ -11,9 +11,9 @@ $ npm install get-object-path
 ## Usage
 
 ```js
-get = require('get-object-path')
+var get = require('get-object-path')
 
-context = {
+var context = {
   foo: 'bar',
   qux: {
     hello: 'world',
