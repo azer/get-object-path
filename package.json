@@ -7,7 +7,7 @@
     "test": "prova"
   },
   "devDependencies": {
-    "prova": "*"
+    "prova": "^2.1.2"
   },
   "keywords": [
     "object",

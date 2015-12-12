@@ -1,3 +1,4 @@
+var test = require('prova');
 var get = require("./");
 
 var context = {
@@ -16,30 +17,35 @@ var context = {
     ]
   },
   'foods I love': ['hamsi', 'lahmacun']
-}
+};
 
-it('returns the value of given key', function(){
-  expect(get(context, 'foo')).to.equal('bar');
+test('returns the value of given key', function (t) {
+  t.plan(1);
+  t.equal(get(context, 'foo'), 'bar');
 });
 
-it('parses object paths and returns the value', function(){
-  expect(get(context, 'qux.hello')).to.equal('world');
-  expect(get(context, 'such.perform.so.scale')).to.equal('leveldb');
+test('parses object paths and returns the value', function (t) {
+  t.plan(2);
+  t.equal(get(context, 'qux.hello'), 'world');
+  t.equal(get(context, 'such.perform.so.scale'), 'leveldb');
 });
 
-it('returns undefined for non existing paths', function(){
-  expect(get(context, 'foo.bar.qux')).to.not.exist;
-  expect(get(context, '@foo')).to.not.exist;
+test('returns undefined for non existing paths', function (t) {
+  t.plan(2);
+  t.notOk(get(context, 'foo.bar.qux'));
+  t.notOk(get(context, '@foo'));
 });
 
-it('reads list contents, as well', function(){
-  expect(get(context, 'qux.eggs[0]')).to.equal('white egg');
-  expect(get(context, 'qux.eggs[1]')).to.equal('brown egg');
-  expect(get(context, 'foods I love[0]')).to.equal('hamsi');
-  expect(get(context, 'foods I love[1]')).to.equal('lahmacun');
+test('reads list contents, as well', function (t) {
+  t.plan(4);
+  t.equal(get(context, 'qux.eggs[0]'), 'white egg');
+  t.equal(get(context, 'qux.eggs[1]'), 'brown egg');
+  t.equal(get(context, 'foods I love[0]'), 'hamsi');
+  t.equal(get(context, 'foods I love[1]'), 'lahmacun');
 });
 
-it("doesn't matter if keys with special characters are given", function(){
-  expect(get(context, 'qux.delicious fruits :)[0]')).to.equal('grape');
-  expect(get(context, 'qux.delicious fruits :)[2]')).to.equal('carrot');
+test("doesn't matter if keys with special characters are given", function (t) {
+  t.plan(2);
+  t.equal(get(context, 'qux.delicious fruits :)[0]'), 'grape');
+  t.equal(get(context, 'qux.delicious fruits :)[2]'), 'carrot');
 });
