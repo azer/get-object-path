@@ -5,7 +5,7 @@ Return the value at given object path.
 ## Install
 
 ```bash
-$ npm install get-object-path
+$ npm install azer/get-object-path
 ```
 
 ## Usage
